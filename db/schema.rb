@@ -11,11 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140321090115) do
+ActiveRecord::Schema.define(:version => 20140321110910) do
 
   create_table "albums", :force => true do |t|
     t.string   "title"
-    t.string   "artist"
     t.datetime "release_date"
     t.string   "genre"
     t.datetime "created_at",   :null => false
@@ -23,6 +22,13 @@ ActiveRecord::Schema.define(:version => 20140321090115) do
     t.integer  "feature"
     t.string   "image_path"
   end
+
+  create_table "albums_orders", :id => false, :force => true do |t|
+    t.integer "album_id"
+    t.integer "order_id"
+  end
+
+  add_index "albums_orders", ["album_id", "order_id"], :name => "albums_orders_index", :unique => true
 
   create_table "artists", :force => true do |t|
     t.string   "name"

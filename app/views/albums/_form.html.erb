@@ -18,12 +18,12 @@
   </div>
   <div class="field">
     <%= f.label :artist %><br />
-    <%= collection_select(:album, :artist, @artists, :id, :name) %>
+    <%= f.collection_select(:artist, @artists, :id, :name) %>
     <!-- <%= f.text_field :artist %> -->
   </div>
   <div class="field">
     <%= f.label :release_date %><br />
-    <%= f.datetime_select :release_date %>
+    <%= f.date_select :release_date, :start_year => Date.current.year, :end_year => 1920 %>
   </div>
   <div class="field">
     <%= f.label :genre %><br />
