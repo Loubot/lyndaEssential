@@ -1,5 +1,5 @@
 class AddPriceToAlbums < ActiveRecord::Migration
   def change
-    add_column :albums, :price, :decimal(10,2)
+    add_column :albums, :price, :decimal, :precision => 10, :scale => 2
   end
 end

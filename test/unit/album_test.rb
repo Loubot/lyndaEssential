@@ -10,6 +10,7 @@
 #  updated_at   :datetime         not null
 #  image_path   :string(255)
 #  artist_id    :integer
+#  price        :decimal(10, 2)
 #
 
 require 'test_helper'
