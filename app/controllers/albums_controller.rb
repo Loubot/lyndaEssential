@@ -4,6 +4,7 @@ class AlbumsController < ApplicationController
   def index
     @albums = Album.all
 
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @albums }
@@ -36,6 +37,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1/edit
   def edit
     @album = Album.find(params[:id])
+    @artists = Artist.all
   end
 
   # POST /albums
@@ -64,6 +66,7 @@ class AlbumsController < ApplicationController
         format.html { redirect_to @album, notice: 'Album was successfully updated.' }
         format.json { head :no_content }
       else
+        @artists = Artist.all
         format.html { render action: "edit" }
         format.json { render json: @album.errors, status: :unprocessable_entity }
       end

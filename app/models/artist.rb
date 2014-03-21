@@ -12,5 +12,7 @@
 
 class Artist < ActiveRecord::Base
   attr_accessible :active_years, :biography, :name
+  validates_presence_of :name, :active_years, :biography
+  validates_uniqueness_of :name
   has_many :albums
 end
