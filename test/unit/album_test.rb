@@ -10,6 +10,7 @@
 #  updated_at   :datetime         not null
 #  feature      :integer
 #  image_path   :string(255)
+#  artist_id    :integer
 #
 
 require 'test_helper'

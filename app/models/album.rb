@@ -10,10 +10,11 @@
 #  updated_at   :datetime         not null
 #  feature      :integer
 #  image_path   :string(255)
+#  artist_id    :integer
 #
 
 class Album < ActiveRecord::Base
   has_and_belongs_to_many :orders
-  attr_accessible :artist, :genre, :release_date, :title
+  attr_accessible :artist, :genre, :release_date, :title, :artist_id
   belongs_to :artist
 end
