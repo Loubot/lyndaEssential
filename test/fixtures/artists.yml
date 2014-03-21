@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: artists
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  active_years :string(255)
+#  biography    :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  active_years: MyString
+  biography: MyText
+
+two:
+  name: MyString
+  active_years: MyString
+  biography: MyText
