@@ -8,7 +8,6 @@
 #  genre        :string(255)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  feature      :integer
 #  image_path   :string(255)
 #  artist_id    :integer
 #
