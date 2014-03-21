@@ -19,7 +19,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem "binding_of_caller"
 gem 'habtm_generator', :group => :development
 gem 'annotate'
 gem 'better_errors'

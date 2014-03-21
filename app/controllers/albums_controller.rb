@@ -38,6 +38,7 @@ class AlbumsController < ApplicationController
   def edit
     @album = Album.find(params[:id])
     @artists = Artist.all
+    @features = Feature.all
   end
 
   # POST /albums
@@ -61,6 +62,11 @@ class AlbumsController < ApplicationController
   def update
     @album = Album.find(params[:id])
     @features = Feature.all
+    for featureID in params[:features]
+      unless @album.features.include?(Feature.find(featureID))
+        @album.features << Feature.find(featureID)
+      end
+    end
     respond_to do |format|
       if @album.update_attributes(params[:album])
         format.html { redirect_to @album, notice: 'Album was successfully updated.' }
@@ -71,6 +77,7 @@ class AlbumsController < ApplicationController
         format.json { render json: @album.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # DELETE /albums/1
