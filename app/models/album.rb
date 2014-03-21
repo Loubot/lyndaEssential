@@ -15,4 +15,5 @@
 
 class Album < ActiveRecord::Base
   attr_accessible :artist, :genre, :release_date, :title
+  belongs_to :artist
 end
