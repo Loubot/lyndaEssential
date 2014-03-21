@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'habtm_generator', :group => :development
 gem 'annotate'
 gem 'better_errors'
 gem 'jquery-rails'
