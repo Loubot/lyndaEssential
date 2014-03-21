@@ -14,7 +14,10 @@
 #
 
 class Album < ActiveRecord::Base
+  has_and_belongs_to_many :features
   has_and_belongs_to_many :orders
+  
+
   attr_accessible :artist, :genre, :release_date, :title, :artist_id
   validates_presence_of :release_date, :title, :genre
   validates_uniqueness_of :title

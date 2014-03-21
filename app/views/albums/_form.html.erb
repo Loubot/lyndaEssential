@@ -29,6 +29,13 @@
     <%= f.label :genre %><br />
     <%= f.text_field :genre %>
   </div>
+
+  <div class="field">
+    <%= f.label :feature %><br />
+    <% for feature in @features %>
+      <%= f.check_box('feature_list[]', feature.name, @album.features.collect { |obj| obj.id }.include?(feature.id)) %>
+    <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
