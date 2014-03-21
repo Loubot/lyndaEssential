@@ -4,7 +4,6 @@
 #
 #  id           :integer          not null, primary key
 #  title        :string(255)
-#  artist       :string(255)
 #  release_date :datetime
 #  genre        :string(255)
 #  created_at   :datetime         not null
