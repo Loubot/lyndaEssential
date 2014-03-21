@@ -6,7 +6,7 @@
 #  order_id   :integer
 #  album_id   :integer
 #  quantity   :integer
-#  price      :decimal(, )
+#  price      :decimal(10, 10)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
