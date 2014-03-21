@@ -25,7 +25,7 @@ class AlbumsController < ApplicationController
   # GET /albums/new.json
   def new
     @album = Album.new
-
+    @artists = Artist.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @album }
