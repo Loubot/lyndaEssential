@@ -28,6 +28,7 @@ class AlbumsController < ApplicationController
   def new
     @album = Album.new
     @artists = Artist.all
+    @features = Feature.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @album }
@@ -46,6 +47,9 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(params[:album])
     @features = Feature.all
+    for featureID in params[:features]
+      @album.features << Feature.find(featureID)
+    end
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
@@ -62,10 +66,17 @@ class AlbumsController < ApplicationController
   def update
     @album = Album.find(params[:id])
     @features = Feature.all
+    selected_features = []
     for featureID in params[:features]
-      unless @album.features.include?(Feature.find(featureID))
-        @album.features << Feature.find(featureID)
+      feature = Feature.find(featureID)
+      unless @album.features.include?(feature)
+        @album.features << feature
       end
+      selected_features << feature
+    end
+    deleted_features = @album.features - selected_features
+    for feature in deleted_features
+      @album.features.delete(feature)
     end
     respond_to do |format|
       if @album.update_attributes(params[:album])

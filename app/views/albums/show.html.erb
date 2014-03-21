@@ -20,6 +20,14 @@
   <%= @album.genre %>
 </p>
 
+<p>
+  <b>Features:</b>
+  <% for feature in @album.features %>
+    <%= feature.name %><br>
+  <% end %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>
