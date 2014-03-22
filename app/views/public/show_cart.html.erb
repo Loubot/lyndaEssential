@@ -5,8 +5,8 @@
 <table class="publicListTable">
 	<% for item in @cart.items %>
 		<% row_color = cycle("CCCCCC", "FFFFFF") %>
-		<tr style="background: #<%= row_color %>">
-			<td rowspan="2">
+		<tr style="background-color: #<%= row_color %>">
+			<td rowspan="1">
 				<%= image_tag(item.album.image_path, :size => '18x18') %>
 			</td>
 			<td>
@@ -14,11 +14,11 @@
 			</td>
 			<td>
 				<p class="showCartArtistName"><%= item.album.artist.name if item.album.artist %></p>
-			</td>
+			
 			<td>
 				<p class="publicListAlbumInfo"><%= item.quantity %></p>
-			</td>
-			<td>
+			
+			
 				<p class="publicListAlbumInfo"><%= humanized_money_with_symbol item.price %></p>
 			</td>
 		</tr>

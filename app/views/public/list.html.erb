@@ -2,7 +2,7 @@
 
 <table class="publicListTable">
 	<% for album in @albums %>
-	<% row_color = cycle("CCCCCC", 'FFFFFF') %>
+		<% row_color = cycle("CCCCCC", 'FFFFFF') %>
 		<tr style="background-color: #<%= row_color %>;">
 			<td rowspan="2">
 				<%= image_tag(album.image_path, :size => '90x90') %>
