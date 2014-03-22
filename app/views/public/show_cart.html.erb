@@ -7,7 +7,7 @@
 		<% row_color = cycle("CCCCCC", "FFFFFF") %>
 		<tr style="background-color: #<%= row_color %>">
 			<td rowspan="1">
-				<%= image_tag(item.album.image_path, :size => '18x18') %>
+				<%= image_tag(item.album.image_path, :size => '60x60') %>
 			</td>
 			<td>
 				<p class="publicListAlbumInfo bold"><%= item.album.title %></p>
@@ -16,13 +16,14 @@
 				<p class="showCartArtistName"><%= item.album.artist.name if item.album.artist %></p>
 			
 			<td>
-				<p class="publicListAlbumInfo"><%= item.quantity %></p>
+				<p class="publicListAlbumInfo">Quantity: <%= item.quantity %></p>
 			
 			
-				<p class="publicListAlbumInfo"><%= humanized_money_with_symbol item.price %></p>
+				<p class="publicListAlbumInfo">Price: <%= humanized_money_with_symbol item.price %></p>
 			</td>
 		</tr>
-	<% end %>
-	
+	<% end %>	
 
 </table>
+
+<p>Total: <%= humanized_money_with_symbol @cart.total_price %></p>

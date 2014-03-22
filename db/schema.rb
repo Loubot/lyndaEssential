@@ -69,9 +69,9 @@ ActiveRecord::Schema.define(:version => 20140322191000) do
     t.integer  "order_id"
     t.integer  "album_id"
     t.integer  "quantity"
-    t.decimal  "price",      :precision => 10, :scale => 2
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.decimal  "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "orders", :force => true do |t|
