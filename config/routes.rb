@@ -1,4 +1,6 @@
 MusicLibrary::Application.routes.draw do
+  get "admin/menu"
+
   resources :users
 
 
