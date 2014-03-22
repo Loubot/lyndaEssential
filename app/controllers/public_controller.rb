@@ -9,7 +9,8 @@ class PublicController < ApplicationController
   	@cart = find_or_create_cart
   	@cart.add_album(album)
   	session[:cart] = @cart
-  	render 'show_cart'
+  	redirect_to 'show_cart'
+  	return
   end
 
   def show_cart
