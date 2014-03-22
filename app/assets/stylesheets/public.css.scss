@@ -1,6 +1,11 @@
 .publicListTable{
-	width:400px;
+	width:800px;
+	border-collapse:collapse; 
 }
 .publicListAlbumInfo{
-	font-size:14px;
+	font-size:12px;
 }
+.publicListAlbumInfo.bold{
+	font-weight: bold;
+	font-size: 14px;
+} 

@@ -1,5 +1,5 @@
 class PublicController < ApplicationController
   def list
-  	@albums = Album.all
+  	@albums = Album.all(:order => 'title ASC')
   end
 end

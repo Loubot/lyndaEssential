@@ -39,6 +39,10 @@
       <%= check_box_tag('features[]', feature.id, @album.features.collect { |obj| obj.id}.include?(feature.id)) %><%= feature.name %><br>
     <% end %>
   </div>
+  <div class="field">
+    <%= f.label :image_path %><br />
+    <%= f.text_field :image_path %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

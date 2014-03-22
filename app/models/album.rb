@@ -19,7 +19,7 @@ class Album < ActiveRecord::Base
   has_many :line_items
   
 
-  attr_accessible :artist, :genre, :release_date, :title, :artist_id, :price
+  attr_accessible :artist, :genre, :release_date, :title, :artist_id, :price, :image_path
   validates_presence_of :release_date, :title, :genre
   validates_uniqueness_of :title
   belongs_to :artist
