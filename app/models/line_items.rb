@@ -15,4 +15,12 @@ class LineItems < ActiveRecord::Base
   attr_accessible :album_id, :order_id, :price, :quantity
   belongs_to :album
   belongs_to :order
+
+  def self.new_based_on( album )
+  	line_item = self.new
+  	line_item.album = album
+  	line_item.quantity = 1
+  	line_item.price = album.price
+  	line_item
+  end
 end
