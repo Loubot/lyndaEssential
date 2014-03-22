@@ -11,6 +11,10 @@ MusicLibrary::Application.routes.draw do
 
   resources :features
 
+  resources :customers
+
+  resources :orders
+
 
   root :to => 'albums#index'
 end

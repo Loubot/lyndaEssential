@@ -6,7 +6,7 @@
     <th>Artist</th>
     <th>Release date</th>
     <th>Genre</th>
-    <th></th>
+    <th>Price</th>
     <th></th>
     <th></th>
   </tr>
@@ -17,6 +17,7 @@
     <td><%= album.artist.name %></td>
     <td><%= album.release_date.to_date %></td>
     <td><%= album.genre %></td>
+    <td><%= album.price %></td>
     <td><%= link_to 'Show', album %></td>
     <td><%= link_to 'Edit', edit_album_path(album) %></td>
     <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>

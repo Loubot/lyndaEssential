@@ -2,5 +2,19 @@
 
 <h1><%= @feature.name %></h1>
 
+<div>
+	<h2>Albums associated with <%= @feature.name %></h2>
+	<% for album in @feature.albums %>
+		<div class="col-md-1 feature_albums">
+			Album title:<br>
+			Artist:
+		</div>
+		<%= content_tag :div, class: "col-md-2 feature_albums" do -%>
+			<%= link_to album.title, album %><br>
+			<%= link_to album.artist.name, album.artist %>
+		<% end -%>
+	<% end %>
+</div><br><hr>
+
 <%= link_to 'Edit', edit_feature_path(@feature) %> |
 <%= link_to 'Back', features_path %>
