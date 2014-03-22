@@ -1,2 +1,13 @@
-<h1>Public#list</h1>
-<p>Find me in app/views/public/list.html.erb</p>
+<h1>Music Library Store</h1>
+
+<table class="publicListTable">
+	<% for album in @albums %>
+		<tr>
+		<td>
+			<p class="publicListAlbumInfo"><%= album.title %></p>
+		</td>
+
+	</tr>
+	<% end %>
+	
+</table>
