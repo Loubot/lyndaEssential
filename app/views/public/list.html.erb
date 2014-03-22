@@ -8,10 +8,10 @@
 				<%= image_tag(album.image_path, :size => '90x90') %>
 			</td>
 			<td>
-				<p class="publicListAlbumInfo bold"><%= album.title %></p>
+				<p class="publicListAlbumInfo bold"><%= link_to album.title, album %></p>
 			</td>
 			<td>
-				<p class="publicListAlbumInfo bold"><%= album.artist.name if album.artist %></p>
+				<p class="publicListAlbumInfo bold"><%= link_to album.artist.name, album.artist if album.artist %></p>
 			</td>
 			<td>
 				<p class="publicListAlbumInfo"><%= humanized_money_with_symbol album.price %></p>
@@ -19,7 +19,7 @@
 		</tr>
 		<tr  style="background: #<%= row_color %>;">
 			<td>
-				<p class="publicListAlbumInfo">Released: <%= album.release_date.to_date %></p>
+				<p class="publicListAlbumInfo">Released: <%= album.release_date.strftime("%d %B %Y") %></p>
 			</td>
 			<td>
 				<p class="publicListAlbumInfo">Genre: <%= album.genre %></p>
