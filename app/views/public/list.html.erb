@@ -25,7 +25,7 @@
 				<p class="publicListAlbumInfo">Genre: <%= album.genre %></p>
 			</td>
 			<td>
-				<p class="publicListAlbumInfo">Add to Cart</p>
+				<p class="publicListAlbumInfo"><%= link_to 'Add to cart', public_add_to_cart_path(:id => album.id) %></p>
 			</td>
 		</tr>
 	<% end %>

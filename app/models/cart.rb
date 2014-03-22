@@ -9,7 +9,7 @@ class Cart
 	end
 
 	def add_album(album)		
-		@items << LineItem.new_based_on(album)
+		@items << LineItems.new_based_on(album)
 		@total_price += album.price
 	end
 

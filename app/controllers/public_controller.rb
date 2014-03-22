@@ -6,13 +6,20 @@ class PublicController < ApplicationController
 
   def add_to_cart
   	album = Album.find(params[:id])
-  	@cart = Cart.new
+  	@cart = find_or_create_cart
   	@cart.add_album(album)
-  	redirect_to show_cart_path
+  	session[:cart] = @cart
+  	render 'show_cart'
   end
 
   def show_cart
-
+  	@cart = find_or_create_cart
   end
-  
+
+  private
+
+  def find_or_create_cart
+  	session[:cart] ||= Cart.new
+  end
+
 end

@@ -1,0 +1,28 @@
+<h1>Music Library Store</h1>
+
+<h2>Your Shopping Cart</h2>
+
+<table class="publicListTable">
+	<% for item in @cart.items %>
+		<% row_color = cycle("CCCCCC", "FFFFFF") %>
+		<tr style="background: #<%= row_color %>">
+			<td rowspan="2">
+				<%= image_tag(item.album.image_path, :size => '18x18') %>
+			</td>
+			<td>
+				<p class="publicListAlbumInfo bold"><%= item.album.title %></p>
+			</td>
+			<td>
+				<p class="showCartArtistName"><%= item.album.artist if item.album.artist %></p>
+			</td>
+			<td>
+				<p class="publicListAlbumInfo"><%= item.quantity %></p>
+			</td>
+			<td>
+				<p class="publicListAlbumInfo"><%= humanized_money_with_symbol item.price %></p>
+			</td>
+		</tr>
+	<% end %>
+	
+
+</table>
