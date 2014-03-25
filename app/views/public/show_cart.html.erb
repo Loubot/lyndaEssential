@@ -32,6 +32,7 @@
 
 </table>
 
-<p>Total: <%= humanized_money_with_symbol @cart.total_price %></p><hr>
+
 
 <%= button_to 'Continue Shopping', public_list_path, :method => 'get' %>
+<%= button_to 'Empty Cart', public_empty_cart_path, :method => 'get', :confirm => 'Are you sure?' %>

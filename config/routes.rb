@@ -5,6 +5,8 @@ MusicLibrary::Application.routes.draw do
 
   get 'public/show_cart'
 
+  get 'public/empty_cart'
+
   get "admin/menu"
 
   resources :admin  
