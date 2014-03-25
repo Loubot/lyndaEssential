@@ -23,7 +23,15 @@
 			</td>
 		</tr>
 	<% end %>	
+	<tr>
+		<td>&nbsp;</td>
+		<td>Shopping Cart Total</td>
+		<td>&nbsp;</td>
+		<td><%= humanized_money_with_symbol @cart.total_price %></td>
+	</tr>
 
 </table>
 
-<p>Total: <%= humanized_money_with_symbol @cart.total_price %></p>
+<p>Total: <%= humanized_money_with_symbol @cart.total_price %></p><hr>
+
+<%= button_to 'Continue Shopping', public_list_path, :method => 'get' %>

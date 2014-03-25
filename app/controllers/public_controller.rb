@@ -1,5 +1,7 @@
 class PublicController < ApplicationController
 
+  before_filter :find_or_create_cart, :only => [:add_to_cart, :show_cart]
+
   def list
   	@albums = Album.all(:order => 'title ASC')
   end
@@ -20,7 +22,7 @@ class PublicController < ApplicationController
   private
 
   def find_or_create_cart
-  	session[:cart] ||= Cart.new
+  	@cart = session[:cart] ||= Cart.new
   end
 
 end
