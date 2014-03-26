@@ -8,7 +8,7 @@ class Cart
 	end
 
 	def add_album(album)
-		existing_item = @items.find { |item| item.album_id = album.id }	
+		existing_item = @items.find { |item| item.album_id == album.id }	
 		if existing_item
 			existing_item.quantity += 1
 		else

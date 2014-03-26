@@ -7,6 +7,8 @@ MusicLibrary::Application.routes.draw do
 
   get 'public/empty_cart'
 
+  get 'public/remove_item'
+
   get "admin/menu"
 
   resources :admin  

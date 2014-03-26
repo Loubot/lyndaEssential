@@ -1,6 +1,6 @@
 class PublicController < ApplicationController
 
-  before_filter :find_or_create_cart, :only => [:add_to_cart, :show_cart, :empty_cart]
+  before_filter :find_or_create_cart, :only => [:add_to_cart, :show_cart, :empty_cart, :remove_item]
 
   def list
   	@albums = Album.all(:order => 'title ASC')
@@ -17,6 +17,12 @@ class PublicController < ApplicationController
 
   def show_cart
   	@cart = find_or_create_cart
+  end
+
+  def remove_item
+    album = Album.find(params[:album])
+    @cart.remove_album(album)
+    redirect_to :back
   end
 
   def empty_cart

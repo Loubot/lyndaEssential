@@ -3,6 +3,13 @@
 <h2>Your Shopping Cart</h2>
 
 <table class="publicListTable">
+	<tr>
+		<th>&nbsp</th>
+		<th>Album</th>
+		<th>Artist</th>
+		<th>Quantity</th>
+		<th>Price</th>
+	</tr>
 	<% for item in @cart.items %>
 		<% row_color = cycle("CCCCCC", "FFFFFF") %>
 		<tr style="background-color: #<%= row_color %>">
@@ -16,11 +23,12 @@
 				<p class="showCartArtistName"><%= item.album.artist.name if item.album.artist %></p>
 			
 			<td>
-				<p class="publicListAlbumInfo">Quantity: <%= item.quantity %></p>
-			
-			
-				<p class="publicListAlbumInfo">Price: <%= humanized_money_with_symbol item.price %></p>
+				<p class="publicListAlbumInfo"><%= item.quantity %></p>				
 			</td>
+			<td>
+				<p class="publicListAlbumInfo"><%= humanized_money_with_symbol item.price %></p>
+			</td>
+			<td><%= link_to 'Remove item', public_remove_item_path(:album => item.album) %></td>
 		</tr>
 	<% end %>	
 	<tr>
@@ -34,5 +42,5 @@
 
 
 
-<%= button_to 'Continue Shopping', public_list_path, :method => 'get' %>
-<%= button_to 'Empty Cart', public_empty_cart_path, :method => 'get', :confirm => 'Are you sure?' %>
+<%= button_to 'Continue Shopping', public_list_path, class: "btn btn-primary", :method => 'get' %>
+<%= button_to 'Empty Cart', public_empty_cart_path, class: 'btn btn-danger', :method => 'get', :confirm => 'Are you sure?' %>
