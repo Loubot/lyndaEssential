@@ -17,6 +17,17 @@ class Cart
 		@total_price += album.price
 	end
 
+	def remove_album(album)
+		existing_item = @items.find { |item| item.album_id == album.id }
+		if existing_item and existing_item.quantity > 1
+			existing_item.quantity -= 1
+		else
+			@items.delete(existing_item)
+
+		end
+		@total_price -= album.price
+	end
+
 	def empty_all_items
 		@items = []
 		@total_price = 0.0

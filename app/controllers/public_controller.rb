@@ -1,6 +1,6 @@
 class PublicController < ApplicationController
 
-  before_filter :find_or_create_cart, :only => [:add_to_cart, :show_cart, :empty_cart, :remove_item]
+  before_filter :find_or_create_cart, :only => [:add_to_cart, :show_cart, :empty_cart, :remove_item, :checkout]
 
   def list
   	@albums = Album.all(:order => 'title ASC')
@@ -35,6 +35,10 @@ class PublicController < ApplicationController
 
   def find_or_create_cart
   	@cart = session[:cart] ||= Cart.new
+  end
+
+  def checkout
+    @customer = Customer.new
   end
 
 end
