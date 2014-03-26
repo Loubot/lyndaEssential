@@ -1,0 +1,46 @@
+<h2>Your Shopping Cart</h2>
+
+<table class="publicListTable">
+	
+	<tr>
+		<th>&nbsp</th>
+		<th>Album</th>
+		<th>Artist</th>
+		<th>Quantity</th>
+		<th>Price</th>
+	</tr>
+	<% for item in @cart.items %>
+		<% row_color = cycle("CCCCCC", "FFFFFF") %>
+		<tr style="background-color: #<%= row_color %>">
+			<td rowspan="1">
+				<%= image_tag(item.album.image_path, :size => '60x60') %>
+			</td>
+			<td>
+				<p class="publicListAlbumInfo bold"><%= item.album.title %></p>
+			</td>
+			<td>
+				<p class="showCartArtistName"><%= item.album.artist.name if item.album.artist %></p>
+			
+			<td>
+				<p class="publicListAlbumInfo"><%= item.quantity %></p>				
+			</td>
+			<td>
+				<p class="publicListAlbumInfo"><%= humanized_money_with_symbol item.price %></p>
+			</td>
+			<td><%= link_to 'Remove item', public_remove_item_path(:album => item.album) %></td>
+		</tr>
+	<% end %>	
+
+	<tr>
+
+		<td>&nbsp;</td>
+		<td>Shopping Cart Total</td>
+		<td>&nbsp;</td>
+		<td><%= humanized_money_with_symbol @cart.total_price %></td>
+	</tr>
+	
+
+</table>
+
+
+
