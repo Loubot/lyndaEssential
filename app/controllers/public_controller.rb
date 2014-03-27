@@ -12,7 +12,7 @@ class PublicController < ApplicationController
   	@cart.add_album(album)
   	session[:cart] = @cart
   	redirect_to '/public/show_cart'
-  	return
+  	
   end
 
   def show_cart
