@@ -3,10 +3,14 @@
 
 <%= render 'cart' %>
 
-<%= form_for(Customer.new) do |f| %>
-	<%= f.label :first_name %>
-	<%= f.text_field :first_name %>
-
+<%= form_tag('/public/create_order') do |f| %>
+	<%= label_tag :first_name %><br>
+	<%= text_field_tag :first_name %><br>
+	<%= label_tag :last_name %><br>
+	<%= text_field_tag :last_name %><br>
+	<%= label_tag :address %><br>
+	<%= text_field_tag :address %><br>
+	<%= submit_tag 'Place order' %>
 <% end %>
 
 

@@ -11,6 +11,8 @@ MusicLibrary::Application.routes.draw do
 
   get 'public/checkout'
 
+  post 'public/create_order'
+
   get "admin/menu"
 
   resources :admin  

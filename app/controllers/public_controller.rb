@@ -40,7 +40,13 @@ class PublicController < ApplicationController
   end
 
   def checkout
-    
+    @customer = Customer.new
+        
+  end
+
+  def create_order
+    flash[:success] = params[:address]
+    redirect_to :back
   end
 
 end
