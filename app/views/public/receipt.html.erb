@@ -1,4 +1,28 @@
-<% @order.line_items.each do |item| %>
+<table class="publicListTable">
+	<tr>
+		<th>&nbsp</th>
+		<th>Album</th>
+		<th>Artist</th>
+		<th>Quantity</th>
+		<th>Price</th>
+	</tr>
+	<% @order.line_items.each do |item| %>
+		<tr>
+			<td rowspan="1"><%= image_tag(item.album.image_path, :size => "60x60") %></td>
+			<td >
+				<p class="publicListAlbumInfo bold"><%= item.album.title %></p>
+			</td>
+			<td >
+				<p class="publicListAlbumInfo bold"><%= item.album.artist.name %></p>
+			</td>
+			<td >
+				<p class="publicListAlbumInfo bold"><%= item.quantity %></p>
+			</td>
+			<td >
+				<p class="publicListAlbumInfo bold"><%= humanized_money_with_symbol item.album.price %></p>
+			</td>
+		</tr>
 
-	<%= item.album.title %>
-<% end %>
+	<% end %>
+
+</table>

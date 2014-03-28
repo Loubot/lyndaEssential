@@ -29,6 +29,7 @@ class Cart
 	end
 
 	def empty_all_items
+		lineItems = @items
 		@items = []
 		@total_price = 0.0
 	end
