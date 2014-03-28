@@ -33,11 +33,6 @@ class PublicController < ApplicationController
     redirect_to '/public/list'
   end
 
-  private
-
-  def find_or_create_cart
-  	@cart = session[:cart] ||= Cart.new
-  end
 
   def checkout
     @customer = Customer.new
@@ -49,4 +44,14 @@ class PublicController < ApplicationController
     redirect_to :back
   end
 
+
+  private #-----------------------------
+
+  def find_or_create_cart
+  	@cart = session[:cart] ||= Cart.new
+  end
+
+  
+
+  
 end
