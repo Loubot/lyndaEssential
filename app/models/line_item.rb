@@ -11,7 +11,7 @@
 #  updated_at :datetime         not null
 #
 
-class LineItems < ActiveRecord::Base
+class LineItem < ActiveRecord::Base
   attr_accessible :album_id, :order_id, :price, :quantity
   belongs_to :album
   belongs_to :order

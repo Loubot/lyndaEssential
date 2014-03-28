@@ -12,7 +12,7 @@ class Cart
 		if existing_item
 			existing_item.quantity += 1
 		else
-			@items << LineItems.new_based_on(album)
+			@items << LineItem.new_based_on(album)
 		end
 		@total_price += album.price
 	end

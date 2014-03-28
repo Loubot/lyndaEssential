@@ -11,7 +11,9 @@ MusicLibrary::Application.routes.draw do
 
   get 'public/checkout'
 
-  post 'public/create_order'        => 'public#create_order',      :as => 'public/create_order' 
+  get 'public/receipt'
+
+  post 'public/create_order' 
 
   get "admin/menu"
 

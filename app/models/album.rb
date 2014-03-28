@@ -16,7 +16,7 @@
 class Album < ActiveRecord::Base
   has_and_belongs_to_many :features
   has_and_belongs_to_many :orders
-  has_many :line_items
+  has_many :line_items, dependent: :destroy
   
 
   attr_accessible :artist, :genre, :release_date, :title, :artist_id, :price, :image_path

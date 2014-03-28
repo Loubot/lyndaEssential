@@ -39,9 +39,23 @@ class PublicController < ApplicationController
         
   end
 
-  def create_order
-    flash[:success] = params[:address]
-    redirect_to :back
+  def create_order    
+    @customer = Customer.new(params[:customer])
+    @order = Order.new
+    @order.line_items << @cart.items
+    @customer.orders << @order
+    if @customer.save
+      flash[:success] = 'Well done'
+      @cart.empty_all_items
+      redirect_to public_receipt_path(:id => @order.id)
+    else
+      flash[:danger] = 'Nope'
+      redirect_to :back
+    end    
+  end
+
+  def receipt
+    @order = Order.find(params[:id])
   end
 
 

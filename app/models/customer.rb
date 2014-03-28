@@ -12,6 +12,6 @@
 
 class Customer < ActiveRecord::Base
   attr_accessible :address, :first_name, :last_name
-  has_many :orders
+  has_many :orders, dependent: :destroy
 end
 
