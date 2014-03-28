@@ -3,8 +3,9 @@
 
 <%= render 'cart' %>
 
-<% form_for @customer do |f| %>
-	
+<%= form_for(Customer.new) do |f| %>
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name %>
 
 <% end %>
 

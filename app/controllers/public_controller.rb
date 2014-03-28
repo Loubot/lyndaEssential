@@ -1,6 +1,8 @@
 class PublicController < ApplicationController
 
-  before_filter :find_or_create_cart, :only => [:add_to_cart, :show_cart, :empty_cart, :remove_item, :checkout]
+  require 'monetize/core_extensions'
+
+  before_filter :find_or_create_cart, :except => [:list]
 
   def list
   	@albums = Album.all(:order => 'title ASC')
@@ -38,7 +40,7 @@ class PublicController < ApplicationController
   end
 
   def checkout
-    @customer = Customer.new
+    
   end
 
 end
