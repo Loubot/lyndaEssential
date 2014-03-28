@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.15'
-gem 'money-rails'
+gem 'monetize', '0.2.0'
 
 group :development do 
   gem 'sqlite3'
