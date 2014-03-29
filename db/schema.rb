@@ -93,9 +93,9 @@ ActiveRecord::Schema.define(:version => 20140322191000) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.string   "password"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "hashed_password"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end
