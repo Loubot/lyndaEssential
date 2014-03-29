@@ -1,6 +1,6 @@
 class FeaturesController < ApplicationController
-  # GET /features
-  # GET /features.json
+  before_filter :authorise_access
+  
   def index
     @features = Feature.all
 

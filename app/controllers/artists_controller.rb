@@ -1,6 +1,7 @@
 class ArtistsController < ApplicationController
-  # GET /artists
-  # GET /artists.json
+  
+  before_filter :authorise_access
+  
   def index
     @artists = Artist.all
 

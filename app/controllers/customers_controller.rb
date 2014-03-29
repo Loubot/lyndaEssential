@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
-  # GET /customers
-  # GET /customers.json
+  before_filter :authorise_access
+  
   def index
     @customers = Customer.all
 

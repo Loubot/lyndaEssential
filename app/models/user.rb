@@ -28,8 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def try_to_login
-    hashed_password = User.hash_password(self.password)
-    user = User.where(:name => self.name, :hashed_password => hashed_password)
+    user = User.where(:name => self.name, :hashed_password => User.hash_password(self.password)).first
     user
   end
 

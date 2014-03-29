@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
-  # GET /orders
-  # GET /orders.json
+  before_filter :authorise_access
   def index
     @orders = Order.all
 

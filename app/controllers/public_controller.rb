@@ -1,5 +1,5 @@
 class PublicController < ApplicationController
-
+  
   require 'monetize/core_extensions'
 
   before_filter :find_or_create_cart, :except => [:list]

@@ -1,7 +1,6 @@
 class AlbumsController < ApplicationController
   
-
-
+  before_filter :authorise_access
 
   def index
     @albums = Album.all
