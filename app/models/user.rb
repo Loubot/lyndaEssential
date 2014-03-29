@@ -26,6 +26,13 @@ class User < ActiveRecord::Base
   def destroy_password
   	@password = nil
   end
+
+  def try_to_login
+    hashed_password = User.hash_password(self.password)
+    user = User.where(:name => self.name, :hashed_password => hashed_password)
+    user
+  end
+
   private #------------------------
 
   def self.hash_password(password)

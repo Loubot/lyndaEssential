@@ -17,6 +17,10 @@ MusicLibrary::Application.routes.draw do
 
   get "admin/menu"
 
+  get 'admin/login'
+
+  post 'admin/check_login'
+
   resources :admin  
 
   resources :users

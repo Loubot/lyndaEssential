@@ -1,0 +1,10 @@
+<h1>Admin area login</h1>
+
+<%= form_tag(admin_check_login_path) do  %>
+	<%= label_tag :User %><br>
+	<%= text_field :user, :name %><br>
+	<%= label_tag :Password %><br>
+	<%= password_field :user,  :password %><br>
+	<%= submit_tag 'Submit' %><br>
+
+<% end %>
